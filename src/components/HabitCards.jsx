@@ -1,13 +1,19 @@
 import React from "react";
 import { Link } from "react-router";
+import { motion } from "framer-motion";
 
-const HabitCards = ({habit}) => {
+const MotionLink = motion(Link);
+
+const HabitCards = ({ habit }) => {
   return (
     <div key={habit._id} className="card bg-base-100 shadow-lg ">
       <figure>
         <img
-        className="h-75 w-full"
-          src={habit.image || "https://ik.imagekit.io/joy1414/Gemini_Generated_Image_qyew6tqyew6tqyew.png"}
+          className="h-96 w-full"
+          src={
+            habit.image ||
+            "https://ik.imagekit.io/joy1414/Gemini_Generated_Image_qyew6tqyew6tqyew.png"
+          }
           alt={habit.title}
         />
       </figure>
@@ -20,9 +26,18 @@ const HabitCards = ({habit}) => {
           </p>
         )}
         <div className="card-actions justify-end">
-          <Link to={`/habit/${habit._id}`} className="btn text-white bg-common">
+          <MotionLink
+            to={`/habit/${habit._id}`}
+            whileHover={{
+              scale: 1.05,
+              y: -2,
+              boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.2)",
+            }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="btn text-white bg-common"
+          >
             View Details
-          </Link>
+          </MotionLink>
         </div>
       </div>
     </div>

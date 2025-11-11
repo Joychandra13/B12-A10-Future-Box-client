@@ -1,9 +1,11 @@
 import React, { use } from "react";
 import { Link, NavLink, useNavigate } from "react-router";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import avatar from "../assets/avatar.png";
 import { AuthContext } from "../context/AuthContext";
 import toast, { Toaster } from "react-hot-toast";
+
+const MotionLink = motion(Link);
 
 const NavBar = () => {
   const { user, logOutUser } = use(AuthContext);
@@ -95,7 +97,7 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={-1}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow text-base"
             >
               {navLinks}
             </ul>
@@ -107,7 +109,7 @@ const NavBar = () => {
         </div>
 
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+          <ul className="menu menu-horizontal px-1 text-base">{navLinks}</ul>
         </div>
 
         <div className="navbar-end flex gap-4">
@@ -146,23 +148,18 @@ const NavBar = () => {
             </div>
           ) : (
             <>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link to="/login" className="btn text-white bg-common">
+              <MotionLink to="/login"
+                        className="btn text-white bg-common w-fit"
+                        whileHover={{
+                          scale: 1.05,
+                          y: -2,
+                          boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.2)",
+                        }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      >
                   Login
-                </Link>
-              </motion.button>
+                      </MotionLink>
 
-              {/* <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link to="/signup" className="btn text-white bg-common">
-                  Signup
-                </Link>
-              </motion.button> */}
             </>
           )}
         </div>
