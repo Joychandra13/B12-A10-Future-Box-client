@@ -7,7 +7,7 @@ const HabitCards = ({habit}) => {
       <figure>
         <img
         className="h-75 w-full"
-          src={habit.image || "https://i.ibb.co/ZYW3VTp/brown-brim.png"}
+          src={habit.image || "https://ik.imagekit.io/joy1414/Gemini_Generated_Image_qyew6tqyew6tqyew.png"}
           alt={habit.title}
         />
       </figure>

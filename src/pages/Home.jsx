@@ -1,6 +1,7 @@
 import React from "react";
 import HeroSection from "../components/HeroSection";
 import FeaturedHabits from "../components/Featured";
+import WhyBuildHabits from "../components/WhyBuildHabits";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
         <HeroSection />
       </div>
       <FeaturedHabits />
+      <WhyBuildHabits/>
     </div>
   );
 };

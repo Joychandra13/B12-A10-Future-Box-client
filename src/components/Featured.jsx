@@ -7,7 +7,7 @@ const FeaturedHabits = () => {
 
   return (
     <div className="my-20 container">
-      <h2 className="text-3xl md:text-4xl activeNav text-center mb-20">
+      <h2 className="text-3xl md:text-4xl text-center mb-20 activeNav">
         Featured Habits
       </h2>
 
