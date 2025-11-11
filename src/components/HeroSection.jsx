@@ -34,7 +34,7 @@ const HeroSection = () => {
       <Swiper
         spaceBetween={20}
         centeredSlides={true}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}

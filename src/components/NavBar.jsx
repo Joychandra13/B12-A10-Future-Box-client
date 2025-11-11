@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
+import { motion } from "motion/react";
 
 const NavBar = () => {
   const navLinks = (
@@ -8,9 +9,7 @@ const NavBar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive
-              ? "activeNav"
-              : "text-gray-700"
+            isActive ? "activeNav" : "text-gray-700"
           }
         >
           Home
@@ -20,9 +19,7 @@ const NavBar = () => {
         <NavLink
           to="/add-habit"
           className={({ isActive }) =>
-            isActive
-              ? "activeNav"
-              : "text-gray-700"
+            isActive ? "activeNav" : "text-gray-700"
           }
         >
           Add Habit
@@ -32,9 +29,7 @@ const NavBar = () => {
         <NavLink
           to="/my-habits"
           className={({ isActive }) =>
-            isActive
-              ? "activeNav"
-              : "text-gray-700"
+            isActive ? "activeNav" : "text-gray-700"
           }
         >
           My Habits
@@ -44,9 +39,7 @@ const NavBar = () => {
         <NavLink
           to="/browse-public-habits"
           className={({ isActive }) =>
-            isActive
-              ? "activeNav"
-              : "text-gray-700"
+            isActive ? "activeNav" : "text-gray-700"
           }
         >
           Browse Public Habits
@@ -84,7 +77,7 @@ const NavBar = () => {
             </ul>
           </div>
           {/* Logo with gradient */}
-          <Link to='/' className="text-lg md:text-2xl activeNav">
+          <Link to="/" className="text-lg md:text-2xl activeNav">
             Habit Tracker
           </Link>
         </div>
@@ -94,21 +87,27 @@ const NavBar = () => {
         </div>
 
         <div className="navbar-end flex gap-4">
-          {/* Login: outline button with gradient text */}
-          <Link
-            to="/login"
-            className="btn border-2 border-purple-500 text-transparent bg-clip-text bg-common"
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onHoverStart={() => console.log("hover started!")}
           >
-            Login
-          </Link>
-
-          {/* Signup: solid gradient background */}
-          <Link
-            to="/signup"
-            className="btn text-white bg-common"
+            <Link
+              to="/login"
+              className="btn border-2 border-purple-500 text-transparent bg-clip-text bg-common"
+            >
+              Login
+            </Link>
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onHoverStart={() => console.log("hover started!")}
           >
+          <Link to="/signup" className="btn text-white bg-common">
             Signup
           </Link>
+          </motion.button>
         </div>
       </div>
     </div>
