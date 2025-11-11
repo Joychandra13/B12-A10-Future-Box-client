@@ -11,44 +11,41 @@ const Signup = () => {
   const navigate = useNavigate();
   const { createUser, signInWithGoogle } = use(AuthContext);
 
-const handleSignup = (e) => {
-  e.preventDefault();
+  const handleSignup = (e) => {
+    e.preventDefault();
 
-  const form = e.target;
-  const name = form.name.value;
-  const email = form.email.value;
-  const photoURL = form.photoURL.value;
-  const password = form.password.value;
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photoURL = form.photoURL.value;
+    const password = form.password.value;
 
-  if (
-    !/[A-Z]/.test(password) ||
-    !/[a-z]/.test(password) ||
-    password.length < 6
-  ) {
-    toast.error(
-      "Password must have at least 6 characters, including uppercase and lowercase letters!",
-      { duration: 2000 }
-    );
-    return;
-  }
+    if (
+      !/[A-Z]/.test(password) ||
+      !/[a-z]/.test(password) ||
+      password.length < 6
+    ) {
+      toast.error(
+        "Password must have at least 6 characters, including uppercase and lowercase letters!",
+        { duration: 2000 }
+      );
+      return;
+    }
 
-  createUser(email, password)
-    .then((userCredential) => {
-      return updateProfile(userCredential.user, {
-        displayName: name,
-        photoURL: photoURL || null,
-      }).then(() => {
-        // Update user in AuthContext if you store it there
-        // Example: setUser({ ...userCredential.user, displayName: name, photoURL })
-        toast.success("Signup successful!", { duration: 2000 });
-        navigate("/");
+    createUser(email, password)
+      .then((userCredential) => {
+        return updateProfile(userCredential.user, {
+          displayName: name,
+          photoURL: photoURL || null,
+        }).then(() => {
+          toast.success("Signup successful!", { duration: 2000 });
+          navigate("/");
+        });
+      })
+      .catch((err) => {
+        toast.error(err.message, { duration: 2000 });
       });
-    })
-    .catch((err) => {
-      toast.error(err.message, { duration: 2000 });
-    });
-};
-
+  };
 
   const handleGoogleSignup = () => {
     signInWithGoogle()
