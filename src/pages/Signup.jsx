@@ -1,50 +1,60 @@
-import React, { useState, useContext } from "react";
+import React, { useState, use } from "react";
 import { Typewriter } from "react-simple-typewriter";
-import { AuthContext } from "../context/AuthContext";
 import toast, { Toaster } from "react-hot-toast";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router";
+import { AuthContext } from "../context/AuthContext";
+import { updateProfile } from "firebase/auth";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-  const { createUser, signInWithGoogle } = useContext(AuthContext);
+  const { createUser, signInWithGoogle } = use(AuthContext);
 
-  const handleSignup = (e) => {
-    e.preventDefault();
+const handleSignup = (e) => {
+  e.preventDefault();
 
-    const form = e.target;
-    const name = form.name.value;
-    const email = form.email.value;
-    const photoURL = form.photoURL.value;
-    const password = form.password.value;
+  const form = e.target;
+  const name = form.name.value;
+  const email = form.email.value;
+  const photoURL = form.photoURL.value;
+  const password = form.password.value;
 
-    if (
-      !/[A-Z]/.test(password) ||
-      !/[a-z]/.test(password) ||
-      password.length < 6
-    ) {
-      toast.error(
-        "Password must have at least 6 characters, including uppercase and lowercase letters!"
-      );
-      return;
-    }
+  if (
+    !/[A-Z]/.test(password) ||
+    !/[a-z]/.test(password) ||
+    password.length < 6
+  ) {
+    toast.error(
+      "Password must have at least 6 characters, including uppercase and lowercase letters!",
+      { duration: 2000 }
+    );
+    return;
+  }
 
-    createUser(email, password)
-      .then(() => {
-        toast.success("Signup successful!");
-        navigate('/');
-      })
-      .catch((err) => {
-        toast.error(err.message);
+  createUser(email, password)
+    .then((userCredential) => {
+      return updateProfile(userCredential.user, {
+        displayName: name,
+        photoURL: photoURL || null,
+      }).then(() => {
+        // Update user in AuthContext if you store it there
+        // Example: setUser({ ...userCredential.user, displayName: name, photoURL })
+        toast.success("Signup successful!", { duration: 2000 });
+        navigate("/");
       });
-  };
+    })
+    .catch((err) => {
+      toast.error(err.message, { duration: 2000 });
+    });
+};
+
 
   const handleGoogleSignup = () => {
     signInWithGoogle()
       .then(() => {
-        toast.success("Signed up with Google!");
-        navigate('/');
+        toast.success("Signed up with Google!", { duration: 2000 });
+        navigate("/");
       })
       .catch((err) => {
         toast.error(err.message);
@@ -152,6 +162,15 @@ const Signup = () => {
               </svg>
               Sign up with Google
             </button>
+            <p className="text-center text-sm mt-4">
+              Already have an account?{" "}
+              <a
+                href="/login"
+                className="text-secondary font-semibold hover:underline"
+              >
+                Login
+              </a>
+            </p>
           </div>
         </div>
       </div>
