@@ -39,7 +39,7 @@ const HeroSection = () => {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         breakpoints={{ 640: { spaceBetween: 20 }, 768: { spaceBetween: 30 }, 1024: { spaceBetween: 40 } }}
-        className="w-full h-64 sm:h-80 md:h-96 lg:h-[28rem]"
+        className="w-full h-64 sm:h-80 md:h-96 lg:h-[28rem] rounded-xl"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>

@@ -16,6 +16,7 @@ export const router = createBrowserRouter([
         {
             path: "/",
             element: <Home />,
+            loader: () => fetch('http://localhost:3000/latest-habits'),
         },
         {
             path: "/add-habit",
@@ -28,6 +29,7 @@ export const router = createBrowserRouter([
         {
             path: "/browse-public-habits",
             element: <BrowsePublicHabits />,
+
         },
         {
             path: "/login",
