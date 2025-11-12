@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import avatar from "../assets/avatar.png";
 import { AuthContext } from "../context/AuthContext";
 import toast, { Toaster } from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const MotionLink = motion.create(Link);
 
@@ -14,7 +15,11 @@ const NavBar = () => {
   const handleLogout = () => {
     logOutUser()
       .then(() => {
-        toast.success("User logged out successfully", { duration: 2000 });
+        Swal.fire({
+          title: "User logged out successfully",
+          icon: "success",
+          draggable: true,
+        });
         navigate("/");
       })
       .catch((err) => {

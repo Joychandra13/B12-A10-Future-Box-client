@@ -5,6 +5,7 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -38,7 +39,11 @@ const Signup = () => {
           displayName: name,
           photoURL: photoURL || null,
         }).then(() => {
-          toast.success("Signup successful!", { duration: 2000 });
+          Swal.fire({
+            title: "Signup successful!",
+            icon: "success",
+            draggable: true,
+          });
           navigate("/");
         });
       })
@@ -50,7 +55,11 @@ const Signup = () => {
   const handleGoogleSignup = () => {
     signInWithGoogle()
       .then(() => {
-        toast.success("Signed up with Google!", { duration: 2000 });
+        Swal.fire({
+          title: "Signed up with Google!",
+          icon: "success",
+          draggable: true,
+        });
         navigate("/");
       })
       .catch((err) => {

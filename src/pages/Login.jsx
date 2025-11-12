@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { Typewriter } from "react-simple-typewriter";
 import { AuthContext } from "../context/AuthContext";
 import toast, { Toaster } from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -20,7 +21,11 @@ const Login = () => {
 
     signInUser(email, password)
       .then(() => {
-        toast.success("Login successful!", { duration: 2000 });
+        Swal.fire({
+          title: "Login successful",
+          icon: "success",
+          draggable: true,
+        });
         navigate(from, { replace: true });
       })
       .catch((err) => toast.error(err.message));
@@ -29,7 +34,11 @@ const Login = () => {
   const handleGoogleLogin = () => {
     signInWithGoogle()
       .then(() => {
-        toast.success("Logged in with Google!", { duration: 2000 });
+        Swal.fire({
+          title: "Logged in with Google!",
+          icon: "success",
+          draggable: true,
+        });
         navigate(from, { replace: true });
       })
       .catch((err) => toast.error(err.message));
