@@ -15,20 +15,20 @@ const WhyBuildHabits = () => {
           </p>
 
           <ul className="space-y-3 text-white/90">
-            <li className="flex items-start gap-2">
-              <span className="text-white text-lg font-bold">1.</span>
+            <li className="flex items-start gap-2 text-base md:text-lg">
+              <span className="text-white font-bold">1.</span>
               <span>Improve your focus and mental clarity.</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-white text-lg font-bold">2.</span>
+              <span className="text-white font-bold">2.</span>
               <span>Reduce stress through structured daily routines.</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-white text-lg font-bold">3.</span>
+              <span className="text-white font-bold">3.</span>
               <span>Boost productivity and build self-discipline.</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-white text-lg font-bold">4.</span>
+              <span className="text-white font-bold">4.</span>
               <span>Make steady progress toward long-term goals.</span>
             </li>
           </ul>

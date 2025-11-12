@@ -21,7 +21,7 @@ const FeatureDeepDive = () => {
         <h2 className="text-4xl md:text-5xl xl:text-7xl mb-4 ">
           Visualize Your <strong className="activeNav">Progress</strong>
         </h2>
-        <p className="text-lg md:text-xl mb-6 xl:w-[85%]">
+        <p className="text-base md:text-lg mb-6 xl:w-[85%]">
           Our powerful dashboard transforms raw data into meaningful insights.
           See your habits grow over time with beautiful, easy-to-read charts and
           celebrate every milestone.

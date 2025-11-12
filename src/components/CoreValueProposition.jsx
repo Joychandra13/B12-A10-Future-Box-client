@@ -33,16 +33,16 @@ const CoreValueProposition = () => {
           Achieve Your <strong className="activeNav">Goals Faster</strong> 
         </h2>
 
-        <ul className="space-y-4 text-lg md:text-xl mb-6 xl:w-[85%]">
-          <li className="flex items-start">
+        <ul className="space-y-4 text-base md:text-lg mb-6 xl:w-[85%]">
+          <li className=" items-start">
             <span className="font-bold">1. Personalized Tracking: </span>
              Get insights tailored only to you.
           </li>
-          <li className="flex items-start">
+          <li className=" items-start">
             <span className="font-bold">2. Expert Strategies: </span>
              Access proven, science-backed methods.
           </li>
-          <li className="flex items-start">
+          <li className=" items-start">
             <span className=" font-bold">3. Built-in Motivation: </span>
              Tools designed to keep you consistent.
           </li>
