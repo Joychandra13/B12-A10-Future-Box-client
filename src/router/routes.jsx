@@ -7,11 +7,13 @@ import BrowsePublicHabits from "../pages/BrowsePublicHabits";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import PrivateRoute from "./PrivateRoute";
+import Error from "../pages/Error";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <Error/>,
     children: [
         {
             path: "/",
