@@ -1,16 +1,16 @@
-# React + Vite
+# 🌟 Future Box — Habit Tracking Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site (Client):** [https://b12-a10-future-box-joy.netlify.app/](https://b12-a10-future-box-joy.netlify.app/)
 
-Currently, two official plugins are available:
+**Short Tagline:**  
+_A responsive habit-tracking web app with animated UI, progress tracking, and auth-protected details._
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ **Habit tracking with progress & streaks** — view completion history and a 30-day progress indicator (percentage + progress bar).  
+- 🔒 **Auth-gated details** — protected routes so users must sign in to access habit details and mark completion.  
+- 🎨 **Animated, polished UI** — built with **React**, **Tailwind CSS**, **Framer Motion**, **React Simple Typewriter** and **Lottie** for smooth micro-interactions.  
+- ⚙️ **CRUD + API ready** — client integrates with a **Node.js + MongoDB** backend to create, read, update, and delete habits.  
+- 📱 **Responsive & mobile friendly** — layouts and images scale seamlessly across phones, tablets, and desktops.  
