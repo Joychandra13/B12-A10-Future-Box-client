@@ -53,7 +53,7 @@ const HabitDetails = () => {
   const handleMarkComplete = async (habitId) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/habits/complete/${habitId}`,
+        `https://b12-a10-future-box-server-pi.vercel.app/habits/complete/${habitId}`,
         {
           method: "POST",
         }

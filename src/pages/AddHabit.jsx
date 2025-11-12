@@ -35,7 +35,7 @@ const AddHabit = () => {
       createdAt: new Date(),
     };
 
-    fetch("http://localhost:3000/habits", {
+    fetch("https://b12-a10-future-box-server-pi.vercel.app/habits", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

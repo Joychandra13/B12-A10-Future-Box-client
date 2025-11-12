@@ -1,10 +1,24 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { use } from "react";
+import { Link, useNavigate } from "react-router";
 import { motion } from "framer-motion";
+import { AuthContext } from "../context/AuthContext";
 
 const MotionLink = motion.create(Link);
 
 const HabitCards = ({ habit }) => {
+
+  const { user } = use(AuthContext); 
+  const navigate = useNavigate();
+
+  const handleClick = (e) => {
+    e.preventDefault(); 
+    if (user?.email) {
+      navigate(`/habits-details/${habit._id}`);
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <div key={habit._id} className="card bg-base-100 shadow-lg ">
       <figure>
@@ -41,7 +55,7 @@ const HabitCards = ({ habit }) => {
 
         <div className="card-actions justify-end">
           <MotionLink
-            to={`/habits-details/${habit._id}`}
+            onClick={handleClick}
             whileHover={{
               scale: 1.05,
               y: -2,

@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:3000/latest-habits"),
+        loader: () => fetch("https://b12-a10-future-box-server-pi.vercel.app/latest-habits"),
       },
       {
         path: "/add-habit",
@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/habits/${params.id}`),
+          fetch(`https://b12-a10-future-box-server-pi.vercel.app/habits/${params.id}`),
       },
 
       {
@@ -57,12 +57,12 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/habits/${params.id}`),
+          fetch(`https://b12-a10-future-box-server-pi.vercel.app/habits/${params.id}`),
       },
       {
         path: "/browse-public-habits",
         element: <BrowsePublicHabits />,
-        loader: () => fetch("http://localhost:3000/habits"),
+        loader: () => fetch("https://b12-a10-future-box-server-pi.vercel.app/habits"),
       },
       {
         path: "/login",

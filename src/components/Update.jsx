@@ -35,7 +35,7 @@ const Update = () => {
       userEmail,
     };
 
-    fetch(`http://localhost:3000/habits/${habit._id}`, {
+    fetch(`https://b12-a10-future-box-server-pi.vercel.app/habits/${habit._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

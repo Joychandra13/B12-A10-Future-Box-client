@@ -15,7 +15,7 @@ const MyHabits = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/my-habits?email=${user.email}`)
+    fetch(`https://b12-a10-future-box-server-pi.vercel.app/my-habits?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setHabits(data);
@@ -34,7 +34,7 @@ const MyHabits = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/habits/${id}`, {
+        fetch(`https://b12-a10-future-box-server-pi.vercel.app/habits/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -54,7 +54,7 @@ const MyHabits = () => {
   const handleMarkComplete = async (habitId) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/habits/complete/${habitId}`,
+        `https://b12-a10-future-box-server-pi.vercel.app/habits/complete/${habitId}`,
         {
           method: "POST",
         }

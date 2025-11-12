@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Img1 from "../assets/img1.png";
+import { Link } from "react-router";
 
 const textVariants = {
   hidden: { opacity: 0, x: -100 },
@@ -36,7 +37,7 @@ const FeatureDeepDive = () => {
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
           className="btn text-white bg-common w-fit"
         >
-          Browse Public Habits
+          <Link to="/browse-public-habits">Browse Public Habits</Link>
         </motion.button>
       </motion.div>
 

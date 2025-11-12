@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Img2 from "../assets/img2.png";
+import { Link } from "react-router";
 
 const textVariants = {
   hidden: { opacity: 0, x: 100 },
@@ -57,7 +58,8 @@ const CoreValueProposition = () => {
           }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          Start Your Journey
+          <Link to='/login'>Start Your Journey</Link>
+          
         </motion.button>
       </motion.div>
     </section>
