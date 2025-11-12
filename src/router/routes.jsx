@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
         {
             path: "/browse-public-habits",
             element: <BrowsePublicHabits />,
-
+            loader: () => fetch('http://localhost:3000/habits'),
         },
         {
             path: "/login",

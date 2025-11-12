@@ -5,7 +5,7 @@ import avatar from "../assets/avatar.png";
 import { AuthContext } from "../context/AuthContext";
 import toast, { Toaster } from "react-hot-toast";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 const NavBar = () => {
   const { user, logOutUser } = use(AuthContext);
@@ -103,7 +103,7 @@ const NavBar = () => {
             </ul>
           </div>
 
-          <Link to="/" className="text-lg md:text-2xl activeNav">
+          <Link to="/" className="text-xl md:text-2xl activeNav">
             Habit Tracker
           </Link>
         </div>
@@ -112,7 +112,7 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1 text-base">{navLinks}</ul>
         </div>
 
-        <div className="navbar-end flex gap-4">
+        <div className="navbar-end">
           {user ? (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -148,18 +148,18 @@ const NavBar = () => {
             </div>
           ) : (
             <>
-              <MotionLink to="/login"
-                        className="btn text-white bg-common w-fit"
-                        whileHover={{
-                          scale: 1.05,
-                          y: -2,
-                          boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.2)",
-                        }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                      >
-                  Login
-                      </MotionLink>
-
+              <MotionLink
+                to="/login"
+                className="btn text-white bg-common w-fit"
+                whileHover={{
+                  scale: 1.05,
+                  y: -2,
+                  boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.2)",
+                }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                Login
+              </MotionLink>
             </>
           )}
         </div>

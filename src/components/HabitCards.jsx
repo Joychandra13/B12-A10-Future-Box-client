@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 const HabitCards = ({ habit }) => {
   return (

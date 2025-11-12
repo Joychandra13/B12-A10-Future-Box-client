@@ -39,7 +39,7 @@ const Login = () => {
       <Toaster position="top-right" />
       <div className="hero-content flex-col ">
         <div className="text-center">
-          <h1 className="text-5xl activeNav pb-6">
+          <h1 className="text-4xl md:text-5xl activeNav pb-6">
             {" "}
             <Typewriter
               cursor
