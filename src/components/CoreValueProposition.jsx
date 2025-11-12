@@ -29,22 +29,22 @@ const CoreValueProposition = () => {
         viewport={{ once: true, amount: 0.5 }}
         variants={textVariants}
       >
-        <h2 className="text-4xl md:text-5xl xl:text-7xl font-bold mb-4 ">
+        <h2 className="text-4xl md:text-5xl xl:text-7xl mb-4 ">
           Achieve Your <strong className="activeNav">Goals Faster</strong> 
         </h2>
 
         <ul className="space-y-4 text-lg md:text-xl mb-6 xl:w-[85%]">
           <li className="flex items-start">
-            <span className="font-bold">1. </span>
-            Personalized Tracking: Get insights tailored only to you.
+            <span className="font-bold">1. Personalized Tracking: </span>
+             Get insights tailored only to you.
           </li>
           <li className="flex items-start">
-            <span className="font-bold">2. </span>
-            Expert Strategies: Access proven, science-backed methods.
+            <span className="font-bold">2. Expert Strategies: </span>
+             Access proven, science-backed methods.
           </li>
           <li className="flex items-start">
-            <span className=" font-bold">3. </span>
-            Built-in Motivation: Tools designed to keep you consistent.
+            <span className=" font-bold">3. Built-in Motivation: </span>
+             Tools designed to keep you consistent.
           </li>
         </ul>
 

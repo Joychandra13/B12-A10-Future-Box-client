@@ -18,7 +18,7 @@ const FeatureDeepDive = () => {
         viewport={{ once: true, amount: 0.5 }}
         variants={textVariants}
       >
-        <h2 className="text-4xl md:text-5xl xl:text-7xl font-bold mb-4 ">
+        <h2 className="text-4xl md:text-5xl xl:text-7xl mb-4 ">
           Visualize Your <strong className="activeNav">Progress</strong>
         </h2>
         <p className="text-lg md:text-xl mb-6 xl:w-[85%]">

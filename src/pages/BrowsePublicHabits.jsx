@@ -33,8 +33,8 @@ const BrowsePublicHabits = () => {
 
   return (
     <section className="px-6 py-10 max-w-7xl mx-auto">
-      <h2 className="text-3xl md:text-4xl text-center activeNav mb-4">
-        Browse Public Habits
+      <h2 className="text-3xl md:text-4xl text-center mb-4">
+        Browse Public <span className="activeNav">Habits</span>
       </h2>
       <p className="text-center text-gray-600 mb-8">
         Discover habits shared by the community search, filter, and get

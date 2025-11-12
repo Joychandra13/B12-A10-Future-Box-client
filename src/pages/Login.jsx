@@ -82,13 +82,6 @@ const Login = () => {
                   {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
                 </span>
               </div>
-
-              <div className="text-right">
-                <p className="text-sm text-secondary hover:underline">
-                  Forgot Password?
-                </p>
-              </div>
-
               <button type="submit" className="btn text-white bg-common mt-4">
                 Login
               </button>
