@@ -25,8 +25,8 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:3000/latest-habits"),
-        // loader: () => fetch("https://b12-a10-future-box-server-pi.vercel.app/latest-habits"),
+        // loader: () => fetch("http://localhost:3000/latest-habits"),
+        loader: () => fetch("https://b12-a10-future-box-server-pi.vercel.app/latest-habits"),
       },
       {
         path: "/add-habit",
