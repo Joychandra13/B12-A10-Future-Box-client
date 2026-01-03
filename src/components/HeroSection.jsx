@@ -30,16 +30,16 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="my-10">
+    <section className="">
       <Swiper
         spaceBetween={20}
         centeredSlides={true}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[Autoplay, Pagination]}
         breakpoints={{ 640: { spaceBetween: 20 }, 768: { spaceBetween: 30 }, 1024: { spaceBetween: 40 } }}
-        className="w-full h-64 sm:h-80 md:h-96 lg:h-[28rem] rounded-xl"
+        className="w-full rounded-b-xl"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -49,6 +49,7 @@ const HeroSection = () => {
               text={slide.text}
               bgClass={slide.bgClass}
             />
+            
           </SwiperSlide>
         ))}
       </Swiper>

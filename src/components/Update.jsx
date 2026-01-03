@@ -6,7 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 const Update = () => {
   const data = useLoaderData();
   const { user } = use(AuthContext);
-    console.log("Loaded habit:", data); // check the data
+  console.log("Loaded habit:", data); // check the data
 
   const habit = data;
 
@@ -28,6 +28,7 @@ const Update = () => {
     const formData = {
       title: e.target.title.value,
       description: e.target.description.value,
+      detailedDescription: e.target.detailedDescription.value || "",
       category: e.target.category.value,
       reminderTime: e.target.reminderTime.value,
       image: e.target.img.value || habit.image || "",
@@ -35,13 +36,16 @@ const Update = () => {
       userEmail,
     };
 
-    fetch(`https://b12-a10-future-box-server-pi.vercel.app/habits/${habit._id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
+    fetch(
+      `https://b12-a10-future-box-server-pi.vercel.app/habits/${habit._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -84,6 +88,16 @@ const Update = () => {
                 placeholder="Why is this habit important?"
                 className="textarea textarea-bordered h-24 w-full"
                 required
+              />
+            </div>
+
+            <div>
+              <label className="label">Detailed Description</label>
+              <textarea
+                name="detailedDescription"
+                defaultValue={habit?.detailedDescription}
+                placeholder="Add more details, notes, or motivation for this habit..."
+                className="textarea textarea-bordered h-40 w-full"
               />
             </div>
 

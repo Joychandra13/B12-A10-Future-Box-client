@@ -5,18 +5,10 @@ import toast, { Toaster } from "react-hot-toast";
 const AddHabit = () => {
   const { user } = useContext(AuthContext);
 
-
   const userEmail = user?.email;
-  const userName = user?.displayName ;
+  const userName = user?.displayName;
 
-  const categories = [
-    "Morning",
-    "Work",
-    "Fitness",
-    "Evening",
-    "Study",
-    "Other",
-  ];
+  const categories = ["Morning", "Work", "Fitness", "Evening", "Study", "Other"];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,6 +16,7 @@ const AddHabit = () => {
     const formData = {
       title: e.target.title.value,
       description: e.target.description.value,
+      detailedDescription: e.target.detailedDescription.value || "",
       category: e.target.category.value,
       reminderTime: e.target.reminderTime.value,
       image: e.target.img.value || "",
@@ -75,6 +68,7 @@ const AddHabit = () => {
       <div className="w-full max-w-lg shrink-0 rounded-xl bg-white shadow-2xl">
         <div className="card-body">
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Habit Title */}
             <div>
               <label className="label">Habit Title</label>
               <input
@@ -86,8 +80,9 @@ const AddHabit = () => {
               />
             </div>
 
+            {/* Short Description */}
             <div>
-              <label className="label">Description</label>
+              <label className="label">Short Description</label>
               <textarea
                 name="description"
                 placeholder="Why is this habit important?"
@@ -96,6 +91,17 @@ const AddHabit = () => {
               />
             </div>
 
+            {/* Detailed Description */}
+            <div>
+              <label className="label">Detailed Description / Notes</label>
+              <textarea
+                name="detailedDescription"
+                placeholder="Add a more detailed explanation or notes (optional)"
+                className="textarea textarea-bordered h-40 w-full"
+              />
+            </div>
+
+            {/* Category and Reminder */}
             <div className="flex gap-4">
               <div className="flex-1">
                 <label className="label">Category</label>
@@ -124,6 +130,7 @@ const AddHabit = () => {
               </div>
             </div>
 
+            {/* Image URL */}
             <div>
               <label className="label">Upload Image URL</label>
               <input
@@ -134,6 +141,7 @@ const AddHabit = () => {
               />
             </div>
 
+            {/* User Info */}
             <div className="flex gap-4">
               <div className="flex-1">
                 <label className="label">Your Name</label>

@@ -5,6 +5,13 @@ import WhyBuildHabits from "../components/WhyBuildHabits";
 import FeatureDeepDive from "../components/FeatureDeepDive";
 import CoreValueProposition from "../components/CoreValueProposition";
 import LoadingSpinner from "../components/LoadingSpinner";
+import Banner from "../components/Banner";
+import ServicesSection from "../components/ServicesSection";
+import CategoriesSection from "../components/CategoriesSection";
+import StatisticsSection from "../components/StatisticsSection";
+import FAQSection from "../components/FAQSection";
+import NewsletterSection from "../components/NewsletterSection";
+import TestimonialsSection from "../components/TestimonialsSection";
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
@@ -27,9 +34,15 @@ const Home = () => {
         <HeroSection />
       </div>
       <FeaturedHabits />
+      <ServicesSection/>
       <WhyBuildHabits/>
+      <CategoriesSection/>
+      <StatisticsSection/>
+      <TestimonialsSection/>
       <CoreValueProposition/>
       <FeatureDeepDive/>
+      <FAQSection/>
+      <NewsletterSection/>
     </div>
   );
 };

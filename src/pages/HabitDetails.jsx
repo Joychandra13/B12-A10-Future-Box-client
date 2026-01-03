@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router";
+import React, { useContext, useEffect, useState } from "react";
+import { useLoaderData, useNavigate } from "react-router";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { motion } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
+import { AuthContext } from "../context/AuthContext";
 
 const HabitDetails = () => {
   const habit = useLoaderData();
   const [loading, setLoading] = useState(true);
   const [habitState, setHabitState] = useState(habit);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 3000);
@@ -77,6 +80,15 @@ const HabitDetails = () => {
     }
   };
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (user?.email) {
+      handleMarkComplete(habitState._id);
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <div className="flex justify-center items-center p-6 min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-red-50">
       <Toaster position="top-right" reverseOrder={false} />
@@ -101,6 +113,7 @@ const HabitDetails = () => {
               {habitState.title}
             </h2>
             <p className="text-gray-600 mt-2">{habitState.description}</p>
+            <p className="text-gray-600 mt-2">{habitState.detailedDescription}</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
               <div className="bg-gray-100 p-3 rounded-lg shadow-sm">
@@ -140,7 +153,7 @@ const HabitDetails = () => {
 
           <div className="flex flex-wrap gap-4 mt-4">
             <motion.button
-              onClick={() => handleMarkComplete(habitState._id)}
+              onClick={handleClick}
               className="btn text-white bg-common w-fit"
               whileHover={{
                 scale: 1.05,
@@ -159,7 +172,7 @@ const HabitDetails = () => {
                 boxShadow: "0px 5px 10px rgba(0,0,0,0.2)",
               }}
             >
-              Back to Habits
+              Back
             </motion.button>
           </div>
         </div>

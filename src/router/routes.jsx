@@ -10,6 +10,11 @@ import PrivateRoute from "./PrivateRoute";
 import Error from "../pages/Error";
 import HabitDetails from "../pages/HabitDetails";
 import Update from "../components/Update";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import DashboardLayout from "../layout/DashboardLayout";
+import MyProfile from "../pages/MyProfile";
+import Progress from "../pages/Progress";
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +25,8 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("https://b12-a10-future-box-server-pi.vercel.app/latest-habits"),
+        loader: () => fetch("http://localhost:3000/latest-habits"),
+        // loader: () => fetch("https://b12-a10-future-box-server-pi.vercel.app/latest-habits"),
       },
       {
         path: "/add-habit",
@@ -38,7 +44,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://b12-a10-future-box-server-pi.vercel.app/habits/${params.id}`),
+          fetch(
+            `https://b12-a10-future-box-server-pi.vercel.app/habits/${params.id}`
+          ),
       },
 
       {
@@ -51,18 +59,25 @@ export const router = createBrowserRouter([
       },
       {
         path: "/habits-details/:id",
-        element: (
-          <PrivateRoute>
-            <HabitDetails />
-          </PrivateRoute>
-        ),
+        element: <HabitDetails />,
         loader: ({ params }) =>
-          fetch(`https://b12-a10-future-box-server-pi.vercel.app/habits/${params.id}`),
+          fetch(
+            `https://b12-a10-future-box-server-pi.vercel.app/habits/${params.id}`
+          ),
       },
       {
         path: "/browse-public-habits",
         element: <BrowsePublicHabits />,
-        loader: () => fetch("https://b12-a10-future-box-server-pi.vercel.app/habits"),
+        loader: () =>
+          fetch("https://b12-a10-future-box-server-pi.vercel.app/habits"),
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
       {
         path: "/login",
@@ -71,6 +86,57 @@ export const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: <Progress />,
+        loader: () =>
+          fetch("https://b12-a10-future-box-server-pi.vercel.app/habits").then(
+            (res) => {
+              if (!res.ok) throw new Error("Failed to fetch habits");
+              return res.json();
+            }
+          ),
+      },
+      {
+        path: "profile",
+        element: <MyProfile />,
+      },
+      {
+        path: "add-habit",
+        element: <AddHabit />,
+      },
+      {
+        path: "my-habits",
+        element: <MyHabits />,
+        loader: () =>
+          fetch("https://b12-a10-future-box-server-pi.vercel.app/habits").then(
+            (res) => {
+              if (!res.ok) throw new Error("Failed to fetch habits");
+              return res.json();
+            }
+          ),
+      },
+      {
+        path: "progress",
+        element: <Progress />,
+        loader: () =>
+          fetch("https://b12-a10-future-box-server-pi.vercel.app/habits").then(
+            (res) => {
+              if (!res.ok) throw new Error("Failed to fetch habits");
+              return res.json();
+            }
+          ),
       },
     ],
   },

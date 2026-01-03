@@ -1,15 +1,15 @@
 import React from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { FaSpinner } from "react-icons/fa";
 
-const LoadingSpinner = () => {
-    
+const LoadingSpinner = ({ size = "text-4xl", text = "Loading..." }) => {
   return (
-    <div style={{ width: 300, height: 300 }}>
-      <DotLottieReact
-        src="https://lottie.host/b74d7b36-9368-472c-ab68-0789e49fc5a1/o3kd2uZRH0.lottie"
-        loop
-        autoplay
+    <div className="flex flex-col items-center justify-center gap-3 py-6">
+      <FaSpinner
+        className={`animate-spin text-purple-600 ${size}`}
       />
+      {text && (
+        <p className="text-sm text-gray-500 font-medium">{text}</p>
+      )}
     </div>
   );
 };

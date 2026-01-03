@@ -12,11 +12,11 @@ const HabitCards = ({ habit }) => {
 
   const handleClick = (e) => {
     e.preventDefault(); 
-    if (user?.email) {
+    // if (user?.email) {
       navigate(`/habits-details/${habit._id}`);
-    } else {
-      navigate("/login");
-    }
+    // } else {
+    //   navigate("/login");
+    // }
   };
 
   return (
@@ -34,23 +34,27 @@ const HabitCards = ({ habit }) => {
       <div className="card-body flex flex-col justify-between">
         <div className="flex flex-col justify-start gap-4">
           <h2 className="card-title activeNav">{habit.title}</h2>
+          
 
-          <div className="flex justify-start gap-4 text-center">
-            <p className="p-1 border border-b-blue-500 w-1/2 text-xs">
+          <div className="flex justify-start gap-1">
+            <p className="p-1 border w-1/2 text-xs">
               <strong>Category: </strong>
               {habit.category}
             </p>
-            <p className="p-1 border border-b-blue-500 w-1/2 text-xs">
-              <strong>Reminder Time: </strong>
+            <p className="p-1 border w-1/2 text-xs">
+              <strong>Reminder: </strong>
               {habit.reminderTime}
             </p>
           </div>
+          
 
-          {habit.isPublic && (
-            <p className="text-sm text-gray-500">
-              Creator: <span className="font-medium">{habit.userName}</span>
+          <p className="text-sm text-gray-500">
+              {habit.description} <span className="text-xs">{habit.isPublic && (
+              <span className="font-medium">({habit.userName})</span>
+          )}</span>
             </p>
-          )}
+
+          
         </div>
 
         <div className="card-actions justify-end">

@@ -15,7 +15,9 @@ const MyHabits = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://b12-a10-future-box-server-pi.vercel.app/my-habits?email=${user.email}`)
+    fetch(
+      `https://b12-a10-future-box-server-pi.vercel.app/my-habits?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setHabits(data);
@@ -137,6 +139,9 @@ const MyHabits = () => {
                   </p>
                 </div>
               </div>
+              <p className="text-xs text-gray-500">
+                {habit.description}
+              </p>
 
               <div className="flex flex-col justify-between mt-4 gap-2">
                 <div className="flex flex-wrap gap-2 text-sm">

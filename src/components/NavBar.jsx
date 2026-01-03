@@ -5,6 +5,7 @@ import avatar from "../assets/avatar.png";
 import { AuthContext } from "../context/AuthContext";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
+import DarkModeToggle from "./DarkModeToggle";
 
 const MotionLink = motion.create(Link);
 
@@ -75,11 +76,31 @@ const NavBar = () => {
           Browse Public Habits
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive ? "activeNav" : "text-gray-700"
+          }
+        >
+          About
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive ? "activeNav" : "text-gray-700"
+          }
+        >
+          Contact
+        </NavLink>
+      </li>
     </>
   );
 
   return (
-    <div className="bg-base-100 shadow-sm">
+    <div className="fixed top-0 left-0 w-full bg-base-100 shadow-sm z-50">
       <Toaster position="top-right" />
       <div className="navbar container mx-auto px-6">
         <div className="navbar-start">
@@ -108,7 +129,7 @@ const NavBar = () => {
             </ul>
           </div>
 
-          <Link to="/" className="text-xl md:text-2xl activeNav">
+          <Link to="/" className="text-xl md:text-2xl min-w-full activeNav">
             Habit Tracker
           </Link>
         </div>
@@ -118,6 +139,7 @@ const NavBar = () => {
         </div>
 
         <div className="navbar-end">
+          <DarkModeToggle />
           {user ? (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -141,6 +163,20 @@ const NavBar = () => {
                   <p className="text-sm text-gray-500">{user?.email}</p>
                 </li>
                 <div className="divider my-1"></div>
+                <li>
+                  <Link to="/dashboard"
+                    className="btn text-white bg-common w-full"
+                  >
+                    Dashboard
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/profile"
+                    className="btn text-white bg-common w-full"
+                  >
+                    My Profile
+                  </Link>
+                </li>
                 <li>
                   <button
                     onClick={handleLogout}

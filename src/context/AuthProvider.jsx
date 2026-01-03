@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 
@@ -36,6 +37,16 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+   const updateUserProfile = async (profile) => {
+    if (auth.currentUser) {
+      await updateProfile(auth.currentUser, profile);
+      // Update local user state so app sees changes immediately
+      setUser({ ...auth.currentUser });
+    } else {
+      throw new Error("No user logged in");
+    }
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -52,6 +63,7 @@ const AuthProvider = ({ children }) => {
     signInUser,
     signInWithGoogle,
     logOutUser,
+    updateUserProfile,
     user,
     loading,
   };
