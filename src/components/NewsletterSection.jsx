@@ -9,7 +9,7 @@ const NewsletterSection = () => {
   };
 
   return (
-    <section className="py-16 w-full bg-gray-50">
+    <section className="py-16 w-full bg-gray-50 dark:bg-neutral-900 dark:border-1 dark:border-t-white">
       <Toaster position="top-right" />
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl lg:text-6xl  mb-4">

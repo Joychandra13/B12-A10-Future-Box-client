@@ -55,8 +55,10 @@ const About = () => {
 
       {/* --- MISSION SECTION (Image Right) --- */}
       <section className="flex flex-col md:flex-row items-stretch w-full h-max">
-        <div className="md:w-1/2 p-8 lg:p-16 order-2 md:order-1 flex flex-col justify-center bg-common text-white">
-          <h2 className="text-4xl md:text-6xl mb-4 font-bold">Our Mission</h2>
+        <div className="md:w-1/2 p-8 lg:p-16 order-2 md:order-1 flex flex-col justify-center ">
+          <h2 className="text-4xl md:text-6xl mb-4">
+            Our <strong className="activeNav">Mission</strong>
+          </h2>
           <p className="text-lg opacity-90 leading-relaxed">
             Our mission is to empower individuals across the globe to take
             control of their daily routines by building small, meaningful
@@ -83,11 +85,11 @@ const About = () => {
             className="h-full w-full object-cover min-h-[300px]"
           />
         </div>
-        <div className="md:w-1/2 p-8 lg:p-16 flex flex-col justify-center bg-gray-50">
+        <div className="md:w-1/2 p-8 lg:p-16 flex flex-col justify-center ">
           <h2 className="text-4xl md:text-6xl mb-4">
             Our <strong className="activeNav">Vision</strong>
           </h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <p className="text-lg  leading-relaxed">
             We envision a future where personal growth is accessible to
             everyone, regardless of background or experience. Our goal is to
             become a trusted global platform for habit formation, helping
@@ -99,8 +101,10 @@ const About = () => {
 
       {/* --- VALUES SECTION (Image Right) --- */}
       <section className="flex flex-col md:flex-row items-stretch w-full h-max">
-        <div className="md:w-1/2 p-8 lg:p-16 order-2 md:order-1 flex flex-col justify-center bg-common text-white">
-          <h2 className="text-4xl md:text-6xl mb-4 font-bold">Core Values</h2>
+        <div className="md:w-1/2 p-8 lg:p-16 order-2 md:order-1 flex flex-col justify-center ">
+        <h2 className="text-4xl md:text-6xl mb-4">
+            Core <strong className="activeNav">Values</strong>
+          </h2>
           <ul className="space-y-4 text-lg">
             <li>
               <strong>Integrity:</strong> We deeply respect user privacy and

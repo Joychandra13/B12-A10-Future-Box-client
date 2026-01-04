@@ -98,7 +98,7 @@ const MyHabits = () => {
   }
 
   return (
-    <div className="container mx-auto my-10 ">
+    <div className="container mx-auto my-20 ">
       <Toaster position="top-right" reverseOrder={false} />
       <h2 className="text-3xl md:text-4xl text-center mb-8">
         My <span className="activeNav">Habits</span>

@@ -34,7 +34,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="flex flex-col md:flex-row items-stretch justify-between w-full h-max bg-white">
+    <section className="flex flex-col md:flex-row items-stretch justify-between w-full h-max">
       {/* Left Side: Image */}
       <div className="md:w-1/2 order-1 md:order-1">
         <div className="h-full w-full shadow-xl">
@@ -65,7 +65,7 @@ const FAQSection = () => {
                 onClick={() => toggleFAQ(index)}
                 className="flex justify-between items-center w-full text-left focus:outline-none"
               >
-                <span className="text-lg md:text-xl font-bold text-gray-800">
+                <span className="text-lg md:text-xl font-bold ">
                   {faq.question}
                 </span>
                 <span className="text-2xl font-bold activeNav">

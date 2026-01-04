@@ -42,13 +42,13 @@ const MyProfile = () => {
   }
 
   return (
-    <div className="flex justify-center p-6 min-h-screen bg-white">
+    <div className="flex justify-center p-6 min-h-screen  mt-20 ">
       <Toaster position="top-right" />
 
       <div className="w-full max-w-md">
         {/* Profile Card */}
         {!showForm && (
-          <div className="bg-white shadow-lg rounded-xl p-6 text-center border border-gray-200">
+          <div className="card bg-white shadow-lg p-6 text-center">
             <div className="flex justify-center mb-4">
               {photoURL ? (
                 <img
@@ -61,7 +61,7 @@ const MyProfile = () => {
               )}
             </div>
 
-            <h2 className="text-2xl font-semibold mb-1 text-black">{displayName || "No Name"}</h2>
+            <h2 className="text-2xl font-semibold mb-1">{displayName || "No Name"}</h2>
             <p className="text-gray-700 mb-2">{user.email}</p>
 
             <button
@@ -77,7 +77,7 @@ const MyProfile = () => {
         {showForm && (
           <form
             onSubmit={handleSave}
-            className="bg-white shadow-lg rounded-xl p-6 mt-4 text-center border border-gray-200"
+            className="card bg-white shadow-lg p-6 mt-4 text-center"
           >
             <div className="flex justify-center mb-4">
               {photoURL ? (
@@ -92,7 +92,7 @@ const MyProfile = () => {
             </div>
 
             <div className="mb-4 text-left">
-              <label className="block text-black mb-1">Name</label>
+              <label className="block mb-1">Name</label>
               <input
                 type="text"
                 value={displayName}
@@ -103,7 +103,7 @@ const MyProfile = () => {
             </div>
 
             <div className="mb-4 text-left">
-              <label className="block text-black mb-1">Photo URL</label>
+              <label className="block mb-1">Photo URL</label>
               <input
                 type="url"
                 value={photoURL}
@@ -114,7 +114,7 @@ const MyProfile = () => {
             </div>
 
             <div className="mb-4 text-left">
-              <label className="block text-black mb-1">Email</label>
+              <label className="block mb-1">Email</label>
               <input
                 type="email"
                 value={user.email}
@@ -134,7 +134,7 @@ const MyProfile = () => {
               <button
                 type="button"
                 onClick={() => setShowForm(false)}
-                className="btn flex-1 bg-gray-200 text-black hover:bg-gray-300"
+                className="btn flex-1 bg-gray-200 hover:bg-gray-300"
               >
                 Cancel
               </button>

@@ -24,7 +24,7 @@ const CategoriesSection = () => {
           {categories.map((category, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2"
+              className="card bg-white p-6 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2"
             >
               <div className="text-purple-600 mb-4">
                 <category.icon className="text-4xl mx-auto" />

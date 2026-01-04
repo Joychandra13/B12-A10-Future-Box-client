@@ -46,10 +46,10 @@ const StatisticsSection = () => {
           {statsData.map((stat, index) => (
             <div
               key={index}
-              className="stat bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2"
+              className="stat card bg-white p-6 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2"
             >
               <div className="stat-figure mb-2 ">{stat.icon}</div>
-              <div className="stat-title text-lg font-semibold">{stat.title}</div>
+              <div className="stat-title dark:text-gray-500 text-lg font-semibold">{stat.title}</div>
               <div className="stat-value text-3xl font-bold activeNav">{stat.value}</div>
               <div className="stat-desc text-gray-500">{stat.desc}</div>
             </div>

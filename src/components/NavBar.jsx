@@ -34,7 +34,7 @@ const NavBar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "activeNav" : "text-gray-700"
+            isActive ? "activeNav" : "text-gray-700 dark:dark:text-gray-500"
           }
         >
           Home
@@ -47,7 +47,7 @@ const NavBar = () => {
             <NavLink
               to="/add-habit"
               className={({ isActive }) =>
-                isActive ? "activeNav" : "text-gray-700"
+                isActive ? "activeNav" : "text-gray-700 dark:dark:text-gray-500"
               }
             >
               Add Habit
@@ -57,7 +57,7 @@ const NavBar = () => {
             <NavLink
               to="/my-habits"
               className={({ isActive }) =>
-                isActive ? "activeNav" : "text-gray-700"
+                isActive ? "activeNav" : "text-gray-700 dark:dark:text-gray-500"
               }
             >
               My Habits
@@ -70,7 +70,7 @@ const NavBar = () => {
         <NavLink
           to="/browse-public-habits"
           className={({ isActive }) =>
-            isActive ? "activeNav" : "text-gray-700"
+            isActive ? "activeNav" : "text-gray-700 dark:dark:text-gray-500"
           }
         >
           Browse Public Habits
@@ -80,7 +80,7 @@ const NavBar = () => {
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? "activeNav" : "text-gray-700"
+            isActive ? "activeNav" : "text-gray-700 dark:dark:text-gray-500"
           }
         >
           About
@@ -90,7 +90,7 @@ const NavBar = () => {
         <NavLink
           to="/contact"
           className={({ isActive }) =>
-            isActive ? "activeNav" : "text-gray-700"
+            isActive ? "activeNav" : "text-gray-700 dark:dark:text-gray-500"
           }
         >
           Contact
@@ -100,7 +100,7 @@ const NavBar = () => {
   );
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-base-100 shadow-sm z-50">
+    <div className="fixed top-0 left-0 w-full bg-base-100 dark:bg-neutral-900 shadow-sm dark:shadow-2xl z-50">
       <Toaster position="top-right" />
       <div className="navbar container mx-auto px-6">
         <div className="navbar-start">
@@ -154,7 +154,7 @@ const NavBar = () => {
 
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-fit p-4 shadow"
+                className="menu menu-sm dropdown-content bg-base-100 dark:bg-neutral-900 dark:shadow-black dark:shadow-sm rounded-box z-10 mt-3 w-fit p-4 shadow"
               >
                 <li className="text-center">
                   <p className="text-lg activeNav">
@@ -165,14 +165,14 @@ const NavBar = () => {
                 <div className="divider my-1"></div>
                 <li>
                   <Link to="/dashboard"
-                    className="btn text-white bg-common w-full"
+                    className="btn text-white bg-common w-full mb-2"
                   >
                     Dashboard
                   </Link>
                 </li>
                 <li>
                   <Link to="/dashboard/profile"
-                    className="btn text-white bg-common w-full"
+                    className="btn text-white bg-common w-full mb-2"
                   >
                     My Profile
                   </Link>
@@ -180,7 +180,7 @@ const NavBar = () => {
                 <li>
                   <button
                     onClick={handleLogout}
-                    className="btn text-white bg-common w-full"
+                    className="btn text-white bg-common w-full mb-2"
                   >
                     Log Out
                   </button>

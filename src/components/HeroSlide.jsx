@@ -29,9 +29,9 @@ const HeroSlide = ({ icon: Icon, title, text, bgClass }) => {
             Get Started
           </Link>
 
-          <button className="btn w-full md:w-fit bg-white text-purple-600 font-semibold px-6 sm:px-8 py-3 sm:py-4 shadow-lg border-none hover:bg-gray-100 transition">
+          <Link to="/about" className="btn w-full md:w-fit bg-white text-purple-600 font-semibold px-6 sm:px-8 py-3 sm:py-4 shadow-lg border-none hover:bg-gray-100 transition">
             Learn More
-          </button>
+          </Link>
         </div>
     </div>
   );

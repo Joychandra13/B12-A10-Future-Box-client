@@ -53,10 +53,10 @@ const AddHabit = () => {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 p-4">
+    <div className="flex min-h-screen flex-col items-center justify-center my-20 p-4">
       <Toaster position="top-right" />
       <div className="mb-8 w-full max-w-lg text-center">
-        <h1 className="text-5xl text-gray-900">
+        <h1 className="text-5xl ">
           Create Your <span className="activeNav">Habit</span>
         </h1>
         <p className="text-lg text-gray-600 mt-2">
@@ -65,7 +65,7 @@ const AddHabit = () => {
         </p>
       </div>
 
-      <div className="w-full max-w-lg shrink-0 rounded-xl bg-white shadow-2xl">
+      <div className="card w-full max-w-lg shrink-0 rounded-xl bg-white shadow-2xl">
         <div className="card-body">
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Habit Title */}

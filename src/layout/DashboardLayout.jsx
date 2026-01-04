@@ -64,8 +64,8 @@ const DashboardLayout = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="flex min-h-full flex-col items-start bg-base-200 is-drawer-close:w-14 is-drawer-open:w-64">
-          <Link to="/" className="p-5 text-xl font-bold activeNav text-center w-full is-drawer-close:hidden">
+        <div className="flex min-h-full flex-col items-start bg-base-200 dark:bg-neutral-900 dark:border-1 dark:border-r-white is-drawer-close:w-14 is-drawer-open:w-64">
+          <Link to="/" className="p-5 text-xl font-bold activeNav w-full is-drawer-close:hidden">
             Habit Tracker
           </Link>
 

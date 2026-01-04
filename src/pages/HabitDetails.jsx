@@ -90,7 +90,7 @@ const HabitDetails = () => {
   };
 
   return (
-    <div className="flex justify-center items-center p-6 min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-red-50">
+    <div className="flex justify-center items-center p-6 min-h-screen ">
       <Toaster position="top-right" reverseOrder={false} />
       <div
         key={habitState._id}
@@ -109,23 +109,23 @@ const HabitDetails = () => {
 
         <div className="card-body lg:w-1/2 flex flex-col justify-between gap-4">
           <div>
-            <h2 className="card-title text-3xl font-bold text-gray-800">
+            <h2 className="card-title text-3xl font-bold">
               {habitState.title}
             </h2>
-            <p className="text-gray-600 mt-2">{habitState.description}</p>
-            <p className="text-gray-600 mt-2">{habitState.detailedDescription}</p>
+            <p className=" mt-2">{habitState.description}</p>
+            <p className=" mt-2">{habitState.detailedDescription}</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-              <div className="bg-gray-100 p-3 rounded-lg shadow-sm">
+              <div className=" bg-gray-100 p-3 rounded-lg shadow-sm dark:bg-neutral-900 dark:shadow-black">
                 <strong>Category:</strong> {habitState.category}
               </div>
-              <div className="bg-gray-100 p-3 rounded-lg shadow-sm">
+              <div className="bg-gray-100 p-3 rounded-lg shadow-sm dark:bg-neutral-900 dark:shadow-black">
                 <strong>Reminder:</strong> {habitState.reminderTime}
               </div>
-              <div className="bg-gray-100 p-3 rounded-lg shadow-sm">
+              <div className="bg-gray-100 p-3 rounded-lg shadow-sm dark:bg-neutral-900 dark:shadow-black">
                 <strong>Created By:</strong> {habitState.userName}
               </div>
-              <div className="bg-gray-100 p-3 rounded-lg shadow-sm">
+              <div className="bg-gray-100 p-3 rounded-lg shadow-sm dark:bg-neutral-900 dark:shadow-black">
                 <strong>Email:</strong> {habitState.userEmail}
               </div>
             </div>

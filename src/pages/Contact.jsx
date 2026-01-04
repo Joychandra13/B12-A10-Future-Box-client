@@ -14,7 +14,7 @@ const Contact = () => {
 
       {/* Header */}
       <div className="mb-8 w-full max-w-lg text-center">
-        <h1 className="text-5xl text-gray-900">
+        <h1 className="text-5xl">
           Contact <span className="activeNav">Us</span>
         </h1>
         <p className="text-lg text-gray-600 mt-2">
@@ -23,7 +23,7 @@ const Contact = () => {
       </div>
 
       {/* Form */}
-      <div className="w-full max-w-lg rounded-xl bg-white shadow-2xl">
+      <div className="card w-full max-w-lg rounded-xl bg-white shadow-2xl">
         <div className="card-body">
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Name */}
